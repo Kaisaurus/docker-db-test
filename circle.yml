@@ -1,0 +1,11 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t ilovehotdogs/sample-node .
+
+test:
+  override:
+    - docker run ilovehotdogs/sample-node npm test
