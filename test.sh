@@ -1,0 +1,1 @@
+docker build -t ilovehotdogs/sample-node . && docker run --rm ilovehotdogs/sample-node npm test
