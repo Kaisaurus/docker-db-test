@@ -9,3 +9,12 @@ dependencies:
 test:
   override:
     - docker run ilovehotdogs/sample-node npm test
+
+
+deployment:
+  production:
+    branch: master
+    # ENV VARS have to be set in circleci UI
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - ./deploy-ci.sh
